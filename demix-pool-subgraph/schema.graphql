@@ -1,6 +1,0 @@
-type Account @entity {
-  id: ID!
-  key: Bytes!
-  owner: Bytes!
-  blockNumber: BigInt!
-}
