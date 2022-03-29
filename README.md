@@ -6,7 +6,7 @@ In recent years, many governments around the world were exposed for using third 
 
 But what if you did not want your history and balances to be publicly viewed by everyone? What if you wanted anonymity and privacy when it came to your transactions? What if you don't want every financial step of yours to be mapped, tracked, and sold against your will? **This is why DecentraWorld was created, we're simply restoring privacy and financial freedom to humanity. We will not allow governments to invade our, or anyone else's privacy.**&#x20;
 
-![](../.gitbook/assets/fight.png)
+![](https://github.com/DecentraWorldDEWO/Documentation/blob/gitbook/.gitbook/assets/fight.png)
 
 We're a group of whitehat developers who believe in what's right, led by Chris the founder of DecentraWorld. We have put together list of applications that are needed to maintain privacy on the blockchain. On top of that, we have also developed our own unique blockchain that have all of our values and believes implemented within it, meaning 100% private blockchain.
 
