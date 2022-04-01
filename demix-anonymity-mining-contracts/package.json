@@ -2,7 +2,7 @@
   "name": "demix-anonymity-mining-contracts",
   "version": "2.1.5",
   "main": "index.js",
-  "repository": "https://github.com/DecentraWorldDEWO/DecentraMix_Contracts/demix-anonymity-mining-contracts.git",
+  "repository": "https://github.com/DecentraWorldDEWO/DecentraMix_Contracts/tree/main/demix-anonymity-mining-contracts",
   "author": "DecentraWorld Project <info@decentraworld.co>",
   "license": "MIT",
   "files": [
@@ -40,13 +40,14 @@
     "rlp": "^2.2.6",
     "solhint-plugin-prettier": "^0.0.4",
     "solidity-coverage": "^0.7.7",
-    "dewo-token-contracts": "^1.0.0",
+    "@dewo-token-contracts": "^1.0.0",
     "truffle": "^5.1.29",
     "truffle-flattener": "^1.4.4",
     "truffle-hdwallet-provider": "^1.0.17",
     "truffle-plugin-verify": "^0.3.11"
   },
   "dependencies": {
+    "dewo-token-contracts": "https://github.com/DecentraWorldDEWO/DecentraMix_Contracts/tree/main/demix-anonymity-mining-contracts",
     "circomlib": "git+https://github.com/decentraworlddewo/circomlib.git#3b492f9801573eebcfe1b6c584afe8a3beecf2b4",
     "decimal.js": "^10.2.0",
     "eth-sig-util": "^2.5.3",
