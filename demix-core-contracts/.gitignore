@@ -47,6 +47,8 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+package-lock.json
+yarn-lock.json
 
 # TypeScript v1 declaration files
 typings/
@@ -94,5 +96,12 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-DeMixTokens_flat.sol
+# Flat contracts
+DeMixToken_flat.sol
 DeMixFactory_flat.sol
+DeMix_flat.sol
+flat_contracts/
+flats/
+
+# Explorer API Keys
+secret.json

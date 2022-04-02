@@ -1,30 +1,29 @@
 /* global artifacts */
 require('dotenv').config({ path: '../.env' })
-const DeMixTokens = artifacts.require('DeMixTokens')
+const DeMixToken = artifacts.require('DeMixToken')
 const Verifier = artifacts.require('Verifier')
-const hasherContract = artifacts.require('Hasher')
+const Hasher = artifacts.require('Hasher')
 const ERC20Mock = artifacts.require('ERC20Mock')
 
-
-module.exports = function(deployer, network, accounts) {
+module.exports = function (deployer) {
   return deployer.then(async () => {
     const { MERKLE_TREE_HEIGHT, ERC20_TOKEN, TOKEN_AMOUNT } = process.env
     const verifier = await Verifier.deployed()
-    const hasherInstance = await hasherContract.deployed()
-    await DeMixTokens.link(hasherContract, hasherInstance.address)
+    const hasher = await Hasher.deployed()
     let token = ERC20_TOKEN
-    if(token === '') {
+    if (token === '') {
       const tokenInstance = await deployer.deploy(ERC20Mock)
       token = tokenInstance.address
     }
     const demix = await deployer.deploy(
-      DeMixTokens,
+      DeMixToken,
       verifier.address,
+      hasher.address,
       TOKEN_AMOUNT,
       MERKLE_TREE_HEIGHT,
-      accounts[0],
       token,
     )
-    console.log('DeMixTokens\'s address ', demix.address)
+    let block = await web3.eth.getBlock("latest")
+    console.log('DeMixToken (', block.number, ') = ',  demix.address)
   })
 }

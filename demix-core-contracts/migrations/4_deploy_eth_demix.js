@@ -2,16 +2,21 @@
 require('dotenv').config({ path: '../.env' })
 const DeMixFactory = artifacts.require('DeMixFactory')
 const Verifier = artifacts.require('Verifier')
-const hasherContract = artifacts.require('Hasher')
+const Hasher = artifacts.require('Hasher')
 
-
-module.exports = function(deployer, network, accounts) {
+module.exports = function (deployer) {
   return deployer.then(async () => {
     const { MERKLE_TREE_HEIGHT, ETH_AMOUNT } = process.env
     const verifier = await Verifier.deployed()
-    const hasherInstance = await hasherContract.deployed()
-    await DeMixFactory.link(hasherContract, hasherInstance.address)
-    const demix = await deployer.deploy(DeMixFactory, verifier.address, ETH_AMOUNT, MERKLE_TREE_HEIGHT, accounts[0])
-    console.log('DeMixFactory\'s address ', demix.address)
+    const hasher = await Hasher.deployed()
+    const demix = await deployer.deploy(
+      DeMixFactory,
+      verifier.address,
+      hasher.address,
+      ETH_AMOUNT,
+      MERKLE_TREE_HEIGHT,
+    )
+    let block = await web3.eth.getBlock("latest")
+    console.log('DeMixFactory (', block.number, ') = ',  demix.address)
   })
 }

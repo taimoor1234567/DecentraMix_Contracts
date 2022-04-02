@@ -1,7 +1,7 @@
 require('dotenv').config()
 const HDWalletProvider = require('@truffle/hdwallet-provider')
 const utils = require('web3-utils')
-
+const {BSCSCANAPIKEY, FTMSCANAPIKEY, ETHERSCANAPIKEY, CRONOSCANAPIKEY, POLYGONSCANAPIKEY, SNOWTRACEAPIKEY} = require('./secret.json');
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -12,89 +12,116 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
+               
+  // Easily verify any contract on any of our supported chains.
+  // npx truffle run verify DeMixFactory@ DeMixToken@ --network testnet
+  
+  // npx truffle run verify DeMixToken@ --network testnet
+  // npx truffle run verify DeMixFactory@ DeMixToken@ Verifier@ --network testnet
+  
+  // npx truffle run verify ContractName@ContractAddress --network $NetworkName
+  // API Keys of explorers
+ plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    bscscan: BSCSCANAPIKEY, // BSC API for Testnet & Mainnet
+    etherscan: ETHERSCANAPIKEY,
+    ftmscan: FTMSCANAPIKEY,
+    cronoscan: CRONOSCANAPIKEY,
+    snowtrace: SNOWTRACEAPIKEY,
+    polygonscan: POLYGONSCANAPIKEY
+  },
+  
 
   networks: {
     development: {
       host: '127.0.0.1', // Localhost (default: none)
       port: 8545, // Standard Ethereum port (default: none)
-      network_id: '*', // Any network (default: none)
+      network_id: '97', // Any network (default: none)
     },
 
     // All networks that DecentraWorld apps are supporting
     // BSC(56), CRO(25), FTM(250), MATIC(137), Testnet(97), ETH(1), AVAX(43114)
+    // Troubleshooting: if you are experiencing connection errors at deployment, use confirmations, networkchecktimeout & timeoutblocks.
+    // RPC Connection Issues: Go to https://chainlist.org/ & replace the failing RPC with a responsive one.
     testnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://data-seed-prebsc-1-s1.binance.org:8545/'),
       network_id: 97,
       gas: 6000000,
-      gasPrice: utils.toWei('5', 'gwei'),
-      // confirmations: 0,
+      gasPrice: utils.toWei('10', 'gwei'),
+      // confirmations: 5,
       // timeoutBlocks: 200,
-      skipDryRun: true,
+      skipDryRun: true
     },
     bsc: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://bsc-dataseed.binance.org'),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'wss://bsc-ws-node.nariox.org:443'),
       network_id: 56,
-      gas: 6000000,
-      gasPrice: utils.toWei('5', 'gwei'),
-      // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      gasPrice: utils.toWei('6', 'gwei'),
+      //confirmations: 2,
+      networkCheckTimeout: 1000000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
     cronos: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://evm.cronos.org'),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://evm-cronos.crypto.org/'),
       network_id: 25,
-      gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gasPrice: utils.toWei('5205', 'gwei'),
       // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      networkCheckTimeout: 50000000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
     fantom: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://rpc3.fantom.network'),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://rpc.fantom.network'),
       network_id: 250,
       gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gasPrice: utils.toWei('620', 'gwei'),
       // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      networkCheckTimeoutnetworkCheckTimeout: 10000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
     matic: {
-      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://polygon-rpc.com'),
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://polygon-rpc.com/'),
       network_id: 137,
       gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gasPrice: utils.toWei('55', 'gwei'),
       // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
     avalanche: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://api.avax.network/ext/bc/C/rpc'),
       network_id: 43114,
-      gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gas: 8000000,
+      gasPrice: utils.toWei('105', 'gwei'),
       // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      networkCheckTimeout: 10000000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
     mainnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, 'https://cloudflare-eth.com'),
       network_id: 1,
-      gas: 6000000,
-      gasPrice: utils.toWei('2', 'gwei'),
+      gas: 3000000,
+      gasPrice: utils.toWei('55', 'gwei'),
       // confirmations: 0,
-      // timeoutBlocks: 200,
-      skipDryRun: true,
+      networkCheckTimeout: 1000000,
+      timeoutBlocks: 200,
+      skipDryRun: true
     },
   },
 
   mocha: {
-    // timeout: 100000
+    //timeout: 100000
   },
 
   // Configure your compilers
   compilers: {
     solc: {
-      version: '0.7.6',
+      version: '0.7.6', 
       settings: {
         optimizer: {
           enabled: true,
@@ -111,6 +138,4 @@ module.exports = {
       ],
     },
   },
-
-  plugins: ['solidity-coverage'],
 }
