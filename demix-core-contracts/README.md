@@ -14,6 +14,11 @@
 
 
 
+
+
+
+
+
 ## Requirements
 
 1. `node v16.14.2(LTS)`
@@ -26,10 +31,25 @@
 
 
 
+
+
+
+
+
+
+
 ## Initialize
 
 1. `npm install`
 2. `npm run build`
+
+
+
+
+
+
+
+
 
 
 
@@ -61,14 +81,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
 ## Deploy DeMixFactory
 
 1. `cp .env.example .env`
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $network --reset --f 2 --to 4` (Deploy Verifier, Hasher, 1st Pool)
 4. Edit `.env` parameters again for the next pool
-5. `npx truffle migrate --network $network --reset --f 4 --to 4`
-`Note:  Repeat the process for as many pool contracts as you need, DeMix uses 4 pools for each native token`
+5. `npx truffle migrate --network $network --reset --f 4 --to 4` <br>
+Note:  Repeat the process for as many pool contracts as you need, DeMix uses 4 pools for each native token <br>
+
+
+
+
+
+
+
+
 
 
 
@@ -82,8 +119,13 @@
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $network --reset --f 5 —to 5` 
 4. Edit `.env` parameters again for the next pool
-5. `npx truffle migrate --network $network --reset --f 5 —to 5`
-`Note:  Repeat the process for as many pool contracts as you wish, DeMix uses 4 pools for each token`
+5. `npx truffle migrate --network $network --reset --f 5 —to 5` <br>
+Note:  Repeat the process for as many pool contracts as you wish, DeMix uses 4 pools for each token <br>
+
+
+
+
+
 
 
 
@@ -111,12 +153,21 @@
 
 
 
+
+
+
+
 ## Verify Through Truffle
 
 1. `npm install -D truffle-plugin-verify@0.5.24`
 2. `cp secret.json.example secret.json`
 3. Update your explorer API keys in `secret.json`
 4. `npx truffle run verify ContractName@0xaddress AnotherContract@0xaddress --network $NetworkName`
+
+
+
+
+
 
 
 
@@ -143,8 +194,23 @@
 
 
 
+
+
+
+
 ## Deploy Other Contracts (Echoer, ProxyLight, Multicall)
 
 1. `cp .env.example .env`
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $NETWORK --reset --f 104 --to 106`
+
+
+
+
+
+
+
+
+
+
+
