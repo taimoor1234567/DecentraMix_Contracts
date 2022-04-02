@@ -39,21 +39,21 @@
 
 ## Contracts in order: (migrations)
 
-2 = Hasher.sol
-3 = Verifier.sol
-4 = DeMixFactory.sol 
-5 = DeMixToken.sol
-6-17 = All Pairs on BSC / Testnet
-22-33 = All Pairs on CRO
-40-51 = All Pairs on FTM
-56-67 = All Pairs on MATIC
-72-83 = All Pairs on AVAX
-88-99 = All Pairs on ETH
-104 = Multicall.sol
-105 = DeMixProxyLight.sol
-106 = Echoer.sol
-(We left 4 slots in between pairs for the DEWO token contracts)
-`npx truffle migrate --network $network —reset --f x --to x`  x = migrations | $network = network name
+2 = Hasher.sol <br>
+3 = Verifier.sol <br>
+4 = DeMixFactory.sol  <br>
+5 = DeMixToken.sol <br>
+6-17 = All Pairs on BSC / Testnet <br>
+22-33 = All Pairs on CRO <br>
+40-51 = All Pairs on FTM <br>
+56-67 = All Pairs on MATIC <br>
+72-83 = All Pairs on AVAX <br>
+88-99 = All Pairs on ETH <br>
+104 = Multicall.sol <br>
+105 = DeMixProxyLight.sol <br>
+106 = Echoer.sol <br>
+(We left 4 slots in between pairs for the DEWO token contracts) <br>
+`npx truffle migrate --network $network —reset --f x --to x`  x = migrations | $network = network name <br>
 
 
 
