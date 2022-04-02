@@ -33,10 +33,16 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 
 
 
+
 # Instructions to deploy DecentraMixFactory Contracts
 
 1. Navigate to `demix-core-contracts` folder.
 2. Download this folder to your local machine.
+
+
+
+
+
 
 
 
@@ -57,6 +63,13 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 
 
 
+
+
+
+
+
+
+
 ## Initialize
 
 1. `npm install`
@@ -68,23 +81,40 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 
 
 
+
+
+
+
+
+
+
+
 ## Contracts in order: (migrations)
 
-2 = Hasher.sol
-3 = Verifier.sol
-4 = DeMixFactory.sol 
-5 = DeMixToken.sol
-6-17 = All Pairs on BSC / Testnet
-22-33 = All Pairs on CRO
-40-51 = All Pairs on FTM
-56-67 = All Pairs on MATIC
-72-83 = All Pairs on AVAX
-88-99 = All Pairs on ETH
-104 = Multicall.sol
-105 = DeMixProxyLight.sol
-106 = Echoer.sol
-(We left 4 slots in between pairs for the DEWO token contracts)
-`npx truffle migrate --network $network —reset --f x --to x`  x = migrations | $network = network name
+2 = Hasher.sol <br>
+3 = Verifier.sol <br>
+4 = DeMixFactory.sol  <br>
+5 = DeMixToken.sol <br>
+6-17 = All Pairs on BSC / Testnet <br>
+22-33 = All Pairs on CRO <br>
+40-51 = All Pairs on FTM <br>
+56-67 = All Pairs on MATIC <br>
+72-83 = All Pairs on AVAX <br>
+88-99 = All Pairs on ETH <br>
+104 = Multicall.sol <br>
+105 = DeMixProxyLight.sol <br>
+106 = Echoer.sol <br>
+(We left 4 slots in between pairs for the DEWO token contracts) <br>
+`npx truffle migrate --network $network —reset --f x --to x`  x = migrations | $network = network name <br>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,8 +128,16 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $network --reset --f 2 --to 4` (Deploy Verifier, Hasher, 1st Pool)
 4. Edit `.env` parameters again for the next pool
-5. `npx truffle migrate --network $network --reset --f 4 --to 4`
-`Note:  Repeat the process for as many pool contracts as you need, DeMix uses 4 pools for each native token`
+5. `npx truffle migrate --network $network --reset --f 4 --to 4` <br>
+Note:  Repeat the process for as many pool contracts as you need, DeMix uses 4 pools for each native token <br>
+
+
+
+
+
+
+
+
 
 
 
@@ -113,8 +151,13 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $network --reset --f 5 —to 5` 
 4. Edit `.env` parameters again for the next pool
-5. `npx truffle migrate --network $network --reset --f 5 —to 5`
-`Note:  Repeat the process for as many pool contracts as you wish, DeMix uses 4 pools for each token`
+5. `npx truffle migrate --network $network --reset --f 5 —to 5` <br>
+Note:  Repeat the process for as many pool contracts as you wish, DeMix uses 4 pools for each token <br>
+
+
+
+
+
 
 
 
@@ -127,12 +170,16 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 1. `cp .env.example .env`
 2. Edit `.env` private key parameters, you don't need to change anything else for this method.
 3. BSC: `npx truffle migrate --network bsc --reset --f 2 --to 3 &&  npx truffle migrate --network bsc --reset --f 6 --to 17 && npx truffle migrate --network bsc --reset --f 104 --to 106 `
-4. Testnet: `npx truffle migrate --network testnet --reset --f 2 --to 3 &&  npx truffle migrate --network testnet --reset --f 6 --to 17 npx truffle migrate --network bsc --reset --f 6 --to 17 
-5. CRO: `npx truffle migrate --network cronos --reset --f 2 --to 3 &&  npx truffle migrate --network cronos --reset --f 22 --to 33 npx truffle migrate --network bsc --reset --f 6 --to 17 
-6. FTM: `npx truffle migrate --network fantom --reset --f 2 --to 3 &&  npx truffle migrate --network fantom --reset --f 40 —to 51 npx truffle migrate --network bsc --reset --f 6 --to 17 
-7. MATIC: `npx truffle migrate --network matic --reset --f 2 --to 3 &&  npx truffle migrate --network matic --reset --f 56 —to 67 npx truffle migrate --network bsc --reset --f 6 --to 17 
-8. AVAX: `npx truffle migrate --network avalanche --reset --f 2 --to 3 &&  npx truffle migrate --network avalanche --reset --f 72 —to 83 npx truffle migrate --network bsc --reset --f 6 --to 17 
-9. ETH: `npx truffle migrate --network mainnet --reset --f 2 --to 3 &&  npx truffle migrate --network mainnet --reset --f 88 —to 99 npx truffle migrate --network bsc --reset --f 6 --to 17 
+4. Testnet: `npx truffle migrate --network testnet --reset --f 2 --to 3 &&  npx truffle migrate --network testnet --reset --f 6 --to 17 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+5. CRO: `npx truffle migrate --network cronos --reset --f 2 --to 3 &&  npx truffle migrate --network cronos --reset --f 22 --to 33 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+6. FTM: `npx truffle migrate --network fantom --reset --f 2 --to 3 &&  npx truffle migrate --network fantom --reset --f 40 —to 51 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+7. MATIC: `npx truffle migrate --network matic --reset --f 2 --to 3 &&  npx truffle migrate --network matic --reset --f 56 —to 67 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+8. AVAX: `npx truffle migrate --network avalanche --reset --f 2 --to 3 &&  npx truffle migrate --network avalanche --reset --f 72 —to 83 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+9. ETH: `npx truffle migrate --network mainnet --reset --f 2 --to 3 &&  npx truffle migrate --network mainnet --reset --f 88 —to 99 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+
+
+
+
 
 
 
@@ -148,6 +195,11 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 2. `cp secret.json.example secret.json`
 3. Update your explorer API keys in `secret.json`
 4. `npx truffle run verify ContractName@0xaddress AnotherContract@0xaddress --network $NetworkName`
+
+
+
+
+
 
 
 
@@ -174,8 +226,23 @@ Once 24 hours have passed, Jenny returns to DecentraMix.io to withdraw her funds
 
 
 
+
+
+
+
 ## Deploy Other Contracts (Echoer, ProxyLight, Multicall)
 
 1. `cp .env.example .env`
 2. Edit `.env` parameters
 3. `npx truffle migrate --network $NETWORK --reset --f 104 --to 106`
+
+
+
+
+
+
+
+
+
+
+
