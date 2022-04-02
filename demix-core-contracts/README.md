@@ -96,12 +96,12 @@
 1. `cp .env.example .env`
 2. Edit `.env` private key parameters, you don't need to change anything else for this method.
 3. BSC: `npx truffle migrate --network bsc --reset --f 2 --to 3 &&  npx truffle migrate --network bsc --reset --f 6 --to 17 && npx truffle migrate --network bsc --reset --f 104 --to 106 `
-4. Testnet: `npx truffle migrate --network testnet --reset --f 2 --to 3 &&  npx truffle migrate --network testnet --reset --f 6 --to 17 npx truffle migrate --network bsc --reset --f 6 --to 17 
-5. CRO: `npx truffle migrate --network cronos --reset --f 2 --to 3 &&  npx truffle migrate --network cronos --reset --f 22 --to 33 npx truffle migrate --network bsc --reset --f 6 --to 17 
-6. FTM: `npx truffle migrate --network fantom --reset --f 2 --to 3 &&  npx truffle migrate --network fantom --reset --f 40 —to 51 npx truffle migrate --network bsc --reset --f 6 --to 17 
-7. MATIC: `npx truffle migrate --network matic --reset --f 2 --to 3 &&  npx truffle migrate --network matic --reset --f 56 —to 67 npx truffle migrate --network bsc --reset --f 6 --to 17 
-8. AVAX: `npx truffle migrate --network avalanche --reset --f 2 --to 3 &&  npx truffle migrate --network avalanche --reset --f 72 —to 83 npx truffle migrate --network bsc --reset --f 6 --to 17 
-9. ETH: `npx truffle migrate --network mainnet --reset --f 2 --to 3 &&  npx truffle migrate --network mainnet --reset --f 88 —to 99 npx truffle migrate --network bsc --reset --f 6 --to 17 
+4. Testnet: `npx truffle migrate --network testnet --reset --f 2 --to 3 &&  npx truffle migrate --network testnet --reset --f 6 --to 17 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+5. CRO: `npx truffle migrate --network cronos --reset --f 2 --to 3 &&  npx truffle migrate --network cronos --reset --f 22 --to 33 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+6. FTM: `npx truffle migrate --network fantom --reset --f 2 --to 3 &&  npx truffle migrate --network fantom --reset --f 40 —to 51 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+7. MATIC: `npx truffle migrate --network matic --reset --f 2 --to 3 &&  npx truffle migrate --network matic --reset --f 56 —to 67 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+8. AVAX: `npx truffle migrate --network avalanche --reset --f 2 --to 3 &&  npx truffle migrate --network avalanche --reset --f 72 —to 83 npx truffle migrate --network bsc --reset --f 6 --to 17 `
+9. ETH: `npx truffle migrate --network mainnet --reset --f 2 --to 3 &&  npx truffle migrate --network mainnet --reset --f 88 —to 99 npx truffle migrate --network bsc --reset --f 6 --to 17 `
 
 
 
